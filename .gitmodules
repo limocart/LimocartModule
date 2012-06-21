@@ -1,0 +1,3 @@
+[submodule "vendor/LimocartPhpSdk"]
+	path = vendor/LimocartPhpSdk
+	url = git://github.com/limocart/LimocartPhpSdk.git

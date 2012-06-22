@@ -13,6 +13,11 @@ return array(
                         'clientSecret' => ''
                     )
                 )
+            ),
+            'LimocartModule\Authentication\Adapter\Oauth2' => array(
+                'parameters' => array(
+                    'api' => 'limocart_api'
+                )
             )
         )
     )

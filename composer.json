@@ -10,6 +10,12 @@
      ],
      "minimum-stability": "alpha",
      "require": {
-         "zendframework/zendframework": "2.*"
-     }
+         "zendframework/zendframework": "2.*",
+				 "limocart/limocart-php-sdk": "dev-master"
+     },
+    "autoload": {
+    	"psr-0": {
+				"LimocartModule": "src/"
+    	}
+		}		 
  }

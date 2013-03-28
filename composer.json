@@ -8,7 +8,6 @@
              "email": "canaydogan89@gmail.com"
          }
      ],
-     "minimum-stability": "alpha",
      "require": {
          "zendframework/zendframework": "2.*",
 				 "limocart/limocart-php-sdk": "dev-master"

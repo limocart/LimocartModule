@@ -1,24 +1,22 @@
 <?php
 
 return array(
-    'di' => array(
-        'instance' => array(
-            'alias' => array(
-                'limocart_api' => 'LimocartPhpSdk\Limocart'
-            ),
-            'limocart_api' => array(
-                'parameters' => array(
-                    'config' => array(
-                        'clientId' => '',
-                        'clientSecret' => ''
-                    )
-                )
-            ),
-            'LimocartModule\Authentication\Adapter\Oauth2' => array(
-                'parameters' => array(
-                    'api' => 'limocart_api'
-                )
-            )
+    'service_manager' => array(
+        'factories' => array(
+            'limocart_api' => function($sm) {
+                $api = new \LimocartPhpSdk\Limocart(array(
+                    'client_id' => '',
+                    'client_secret' => ''
+                ));
+
+                return $api;
+            },
+            'LimocartModule\Authentication\Adapter\Oauth2' => function ($sm) {
+                $adapter = new \LimocartModule\Authentication\Adapter\Oauth2();
+                $adapter->setApi($sm->get('limocart_api'));
+
+                return $adapter;
+            }
         )
     )
 );
